@@ -1,0 +1,32 @@
+*{
+    background-color: #000;
+}
+html ,body{
+    height: 100%;
+    width: 100%;
+}
+.main{
+    background: #000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.content{
+    font-size: 20px;
+    color: #fff;
+    margin: 0 100px;
+    font-weight: 800;
+}
+
+.author{
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 30px;
+}
+

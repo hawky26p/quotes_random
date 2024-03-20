@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quoty</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+
+    {% for quote in quotes %}
+        <div class="main">
+            <div class="content">
+                <h1>{{ quote.content }}</h1>
+            </div>
+            <div class="author">
+                <h3>- {{ quote.author }}</h3>
+            </div>
+       </div>
+    {% endfor %}
+
+</body>
+</html>
