@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import os
+import dj_database_url
+import environ
 
 from pathlib import Path
 
@@ -25,8 +28,10 @@ SECRET_KEY = 'django-insecure-!*-_s+g79rgxba#^xy&9!9g)#f+i3!2gbp12z!2%a4o+pn*m74
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['quotes_randompy.onrender.com']
 
+env = environ.Env()
+environ.Env.read_env()
 
 # Application definition
 
@@ -75,11 +80,9 @@ WSGI_APPLICATION = 'quoty.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default': dj_database_url.config(default=env('DATABASE_URL'))
     }
-}
+
 
 
 # Password validation
